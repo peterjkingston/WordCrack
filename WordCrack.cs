@@ -31,6 +31,16 @@ namespace WordCrack
     private bool IsValidWord(char[] letters){
       return WordDictionary.Exists(letters.ToString())? true : false;
     }
+    
+    protected virtual void OnValidWordFound(WordEventHandler we){
+      if(ValidWordFound != null){
+        ValidWordFound(this,we);
+      }
+    }
+  }
+  
+  public struct WordEventHandler : EventHandler{
+      public string WordFound {get; set;}
   }
 
   public class ComboFinder<T> : Object{
@@ -79,10 +89,14 @@ namespace WordCrack
       }
     }
     
-    protected virtual void OnSingleComboFound(ComboEventArgs ce){
+    protected virtual void OnSingleComboFound(ComboEventArgs<T> ce){
       if (SingleComboFound != null){
         SingleComboFound(this, ce);
       }
     }
+  }
+  
+  public struct ComboEventArgs<T> : EventArgs{
+    public T CarriedResult {get; set;} 
   }
 }
