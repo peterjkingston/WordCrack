@@ -23,7 +23,7 @@ namespace WordCrack
       ComboFinder<char> cf = new ComboFinder<char>(_pool);
       cf.SingleComboFound += Dispatcher.Current.Invoke((object sender, ComboEventArgs<char> ce) =>{
         if(IsValidWord(ce.CarriedResult)){
-          WordEventHandler we.FoundWord = ce.CarriedResult.ToString();
+          WordEventHandler we.FoundWord = ce.CarriedResult.ToString;
         }
       })
     }
