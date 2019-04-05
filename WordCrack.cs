@@ -5,7 +5,7 @@
 
 namespace WordCrack
 {
-  public class WordCrack{
+  public class WordCrack : Object{
     public delegate WordEventHandler(object sender, WordEventArgs we);
     public event WordEventHandler ValidWordFound;
   
@@ -33,7 +33,7 @@ namespace WordCrack
     }
   }
 
-  public class ComboFinder<T>{
+  public class ComboFinder<T> : Object{
     // Use this class in place of GetComboDict, from the VB version.
 
   public delegate void ComboEventHandler(object sender, ComboEventArgs<T> ce);
