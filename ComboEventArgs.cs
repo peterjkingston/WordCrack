@@ -1,5 +1,9 @@
-namespace WordCrack{
-  public struct ComboEventArgs<T> : EventArgs{
-    public T CarriedResult {get; set;} 
+using System;
+
+namespace WordCrack
+{
+  public class ComboEventArgs<T> : EventArgs
+  {
+    public T[] CarriedResult {get; set;} 
   }
 }

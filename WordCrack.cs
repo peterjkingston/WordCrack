@@ -1,40 +1,44 @@
-//Psuedo-code for WordCrack C# implementation.
-//WIP
-
-//Includes here
+using System;
+using System.Collections.Generic;
 
 namespace WordCrack
-{
-  public class WordCrack : Object{
-    public delegate WordEventHandler(object sender, WordEventArgs we);
-    public event WordEventHandler ValidWordFound;
-  
-    private char[] _pool {get; set;}
-    public Dict<string,string> WordDictionary {get; private set;}
-    
-    public WordCrack (string letters, Dict<string,string> wordDict){
-      if(minWordLength <= 0) throw ArgumentOutOfRangeException;
-      
-      _pool = letters.ToArray();
-      WordDictionary = wordDict;
-    }
-    
-    public void FindWords(Int32 minWordLength){
-      ComboFinder<char> cf = new ComboFinder<char>(_pool);
-      cf.SingleComboFound += Dispatcher.Current.Invoke((object sender, ComboEventArgs<char> ce) =>{
-        if(IsValidWord(ce.CarriedResult)){
-          WordEventHandler we.FoundWord = ce.CarriedResult.ToString;
+{ 
+    public class WordCrack : object
+    {
+        public event WordEventHandler ValidWordFound;
+
+        private char[] _pool;
+        private ICombinationFinder<char> _comboFinder;
+        private IWordValidator _wordValidator;
+
+        public Dictionary<string, string> WordDictionary { get; private set; }
+
+        public WordCrack(ICombinationFinder<char> comboFinder, IWordValidator wordValidator)
+        {
+            _comboFinder = comboFinder;
+            _wordValidator = wordValidator;
+            _wordValidator.ValidWordFound += EchoWord;
+
+            _comboFinder.SingleComboFound += (object sender, ComboEventArgs<char> ce) =>
+            {
+                _wordValidator.CheckWord(new String(ce.CarriedResult));
+            };
         }
-      })
+
+        public void FindWords(char[] letters, Int32 minWordLength, Int32 maxWordLength)
+        {
+            _pool = letters;
+            _comboFinder.FindCombos(letters, minWordLength, maxWordLength);
+        }
+
+        private void EchoWord(object sender, WordEventArgs we)
+        {
+            OnValidWordFound(we);
+        }
+
+        protected virtual void OnValidWordFound(WordEventArgs we)
+        {
+            ValidWordFound?.Invoke(this, we);
+        }
     }
-    
-    private bool IsValidWord(char[] letters){
-      return WordDictionary.Exists(letters.ToString())? true : false;
-    }
-    
-    protected virtual void OnValidWordFound(WordEventHandler we){
-      if(ValidWordFound != null){
-        ValidWordFound(this,we);
-      }
-    }
-  }
+}

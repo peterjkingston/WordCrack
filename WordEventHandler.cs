@@ -1,5 +1,4 @@
-namespace WordCrack{
-  public struct WordEventHandler : EventHandler{
-        public string WordFound {get; set;}
-    }
+﻿namespace WordCrack
+{
+    public delegate void WordEventHandler(object sender, WordEventArgs we);
 }
