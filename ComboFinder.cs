@@ -59,16 +59,16 @@ namespace WordCrack
             {
                 for(int i = 0; i < poolArray.Length-1; i++)
                 {
-                    if (!default(T).Equals(poolArray[i]))
-                    {
+                    //if (!default(T).Equals(poolArray[i]))
+                    //{
                         T[] newpool = poolArray;
                         T[] newArray = currentArray;
-                        Int32 itemIndex = GetFirstAvailable(newpool);
-                        newArray[beginRecursion] = newpool[itemIndex];
-                        newpool[itemIndex] = default;
+                        //Int32 itemIndex = GetFirstAvailable(newpool);
+                        newArray[beginRecursion] = newpool[i];
+                        newpool[i] = default;
 
                         GetCombo(newArray, newpool, beginRecursion + 1, maxRecursion);
-                    }
+                    //}
                 }
             }
         }
