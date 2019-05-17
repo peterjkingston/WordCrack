@@ -19,24 +19,13 @@ namespace WordCrack
 
         }
 
-        public void FindCombos(T[] entries, Int32 minComboLength, 
+        public void FindCombos(T[] entries, 
+                                Int32 minComboLength, 
                                 Int32 maxComboLength)
         {
-            /*
-            _entries = GetList(entries);
-
-            Task t = new Task((tArray) =>
-            {
-                for (int i = minComboLength; i < ((T[])tArray).Length; i++)
-                {
-                    GetCombo(new T[i], ((T[])tArray), 0, i);
-                }
-            },
-            _entries.ToArray());
-            t.Start();*/
             for (int i = minComboLength; i <= maxComboLength; i++)
             {
-                GetCombo(new T[i], entries, 0, maxComboLength);
+                GetCombo(new T[i], entries, 0, i);
             }
         }
 
@@ -47,7 +36,10 @@ namespace WordCrack
             return listEntry;
         }
 
-        protected void GetCombo(T[] currentArray, T[] poolArray, Int32 beginRecursion, Int32 maxRecursion)
+        protected void GetCombo(T[] currentArray, 
+                                T[] poolArray, 
+                                Int32 beginRecursion, 
+                                Int32 maxRecursion)
         {
             if(beginRecursion == maxRecursion)
             {
@@ -57,15 +49,17 @@ namespace WordCrack
             }
             else
             {
-                for(int i = 0; i < poolArray.Length-1; i++)
+                for(int i = 0; i < poolArray.Length; i++)
                 {
-                    if (!default(T).Equals(poolArray[i]))
+                    if (!IsDefault(poolArray[i]))
                     {
-                        T[] newpool = poolArray;
-                        T[] newArray = currentArray;
-                        Int32 itemIndex = GetFirstAvailable(newpool);
-                        newArray[beginRecursion] = newpool[itemIndex];
-                        newpool[itemIndex] = default;
+                        Int32 currentWorkingIndex = beginRecursion;
+                        T[] newpool = CopyOrCloneArray(poolArray); //copy the pool
+                        T[] newArray = CopyOrCloneArray(currentArray); //copy the array
+
+                        //Take one out of the pool and put it in the array in the current placement
+                        newArray[currentWorkingIndex] = newpool[i];
+                        newpool[i] = default;
 
                         GetCombo(newArray, newpool, beginRecursion + 1, maxRecursion);
                     }
@@ -73,16 +67,30 @@ namespace WordCrack
             }
         }
 
-        protected static Int32 GetFirstAvailable(T[] tArray)
+        private bool IsDefault(T checkedValue)
         {
-            for(Int32 i = 0; i < tArray.Length; i++)
+            return checkedValue.Equals(default(T));
+        }
+
+        private static ICloneable[] CloneArray(ICloneable[] arrayToClone) 
+        {
+            ICloneable[] newArray = new ICloneable[arrayToClone.Length];
+            
+            for (int i = 0; i < arrayToClone.Length; i++)
             {
-                if(!default(T).Equals(tArray[i]))
-                {
-                    return i;
-                }
+                ICloneable val = arrayToClone[i];
+                newArray[i] = (ICloneable)val.Clone();
             }
-            return 0;
+            
+            return newArray;
+        }
+
+        private static T[] CopyOrCloneArray(T[] arrayToClone)
+        {
+            T[] newArray = new T[arrayToClone.Length];
+            arrayToClone.CopyTo(newArray,0);
+            
+            return newArray;
         }
 
         protected virtual void OnSingleComboFound(ComboEventArgs<T> ce)
