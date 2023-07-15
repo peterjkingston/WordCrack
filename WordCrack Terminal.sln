@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33815.320
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WordCrack Terminal", "WordCrackTerminal\WordCrack Terminal.csproj", "{6EF5133D-0FF3-4E5D-9A61-FF2EB471914B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordCrackLib", "WordCrackLib\WordCrackLib.csproj", "{C30486CC-D564-4DF3-BA95-03D63299E3FD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Legacy", "Legacy", "{315D112B-5B2E-423F-81AB-6436881B8293}"
+	ProjectSection(SolutionItems) = preProject
+		..\WordCrackLib\WordCrack.bas = WordCrackLib\WordCrack.bas
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".meta", ".meta", "{5E2E96CB-7369-44CA-BBCC-8E1FF374DE47}"
+	ProjectSection(SolutionItems) = preProject
+		.filenesting.json = .filenesting.json
+		.gitignore = .gitignore
+		Overhead\azure-pipelines.yml = Overhead\azure-pipelines.yml
+		Overhead\LICENSE = Overhead\LICENSE
+		Overhead\README.md = Overhead\README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordCrackLib_Test", "WordCrackLib_Test\WordCrackLib_Test.csproj", "{CCB7EC5D-B51E-4D9D-A712-0ED61830AAD7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6EF5133D-0FF3-4E5D-9A61-FF2EB471914B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EF5133D-0FF3-4E5D-9A61-FF2EB471914B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EF5133D-0FF3-4E5D-9A61-FF2EB471914B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EF5133D-0FF3-4E5D-9A61-FF2EB471914B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C30486CC-D564-4DF3-BA95-03D63299E3FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C30486CC-D564-4DF3-BA95-03D63299E3FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C30486CC-D564-4DF3-BA95-03D63299E3FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C30486CC-D564-4DF3-BA95-03D63299E3FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCB7EC5D-B51E-4D9D-A712-0ED61830AAD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCB7EC5D-B51E-4D9D-A712-0ED61830AAD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCB7EC5D-B51E-4D9D-A712-0ED61830AAD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCB7EC5D-B51E-4D9D-A712-0ED61830AAD7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CE8CB176-163E-4BA8-BF61-7C173D2B9D10}
+	EndGlobalSection
+EndGlobal
