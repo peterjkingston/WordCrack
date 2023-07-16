@@ -10,3 +10,17 @@ C:\Users\peter\source\repos\peterjkingston\WordCrackLib\obj\Debug\net6.0\WordCra
 C:\Users\peter\source\repos\peterjkingston\WordCrackLib\obj\Debug\net6.0\refint\WordCrackLib.dll
 C:\Users\peter\source\repos\peterjkingston\WordCrackLib\obj\Debug\net6.0\WordCrackLib.pdb
 C:\Users\peter\source\repos\peterjkingston\WordCrackLib\obj\Debug\net6.0\ref\WordCrackLib.dll
+C:\Users\peter\source\repos\peterjkingston\WordCrack\WordCrackLib\bin\Debug\net6.0\WordCrackLib.deps.json
+C:\Users\peter\source\repos\peterjkingston\WordCrack\WordCrackLib\bin\Debug\net6.0\WordCrackLib.dll
+C:\Users\peter\source\repos\peterjkingston\WordCrack\WordCrackLib\bin\Debug\net6.0\WordCrackLib.pdb
+C:\Users\peter\source\repos\peterjkingston\WordCrack\WordCrackLib\obj\Debug\net6.0\WordCrackLib.csproj.AssemblyReference.cache
+C:\Users\peter\source\repos\peterjkingston\WordCrack\WordCrackLib\obj\Debug\net6.0\WordCrackLib.Properties.Resources.resources
+C:\Users\peter\source\repos\peterjkingston\WordCrack\WordCrackLib\obj\Debug\net6.0\WordCrackLib.csproj.GenerateResource.cache
+C:\Users\peter\source\repos\peterjkingston\WordCrack\WordCrackLib\obj\Debug\net6.0\WordCrackLib.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\peter\source\repos\peterjkingston\WordCrack\WordCrackLib\obj\Debug\net6.0\WordCrackLib.AssemblyInfoInputs.cache
+C:\Users\peter\source\repos\peterjkingston\WordCrack\WordCrackLib\obj\Debug\net6.0\WordCrackLib.AssemblyInfo.cs
+C:\Users\peter\source\repos\peterjkingston\WordCrack\WordCrackLib\obj\Debug\net6.0\WordCrackLib.csproj.CoreCompileInputs.cache
+C:\Users\peter\source\repos\peterjkingston\WordCrack\WordCrackLib\obj\Debug\net6.0\WordCrackLib.dll
+C:\Users\peter\source\repos\peterjkingston\WordCrack\WordCrackLib\obj\Debug\net6.0\refint\WordCrackLib.dll
+C:\Users\peter\source\repos\peterjkingston\WordCrack\WordCrackLib\obj\Debug\net6.0\WordCrackLib.pdb
+C:\Users\peter\source\repos\peterjkingston\WordCrack\WordCrackLib\obj\Debug\net6.0\ref\WordCrackLib.dll

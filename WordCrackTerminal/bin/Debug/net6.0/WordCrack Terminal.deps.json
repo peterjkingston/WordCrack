@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "WordCrack Terminal/1.0.0": {
+        "dependencies": {
+          "WordCrackLib": "1.0.0"
+        },
+        "runtime": {
+          "WordCrack Terminal.dll": {}
+        }
+      },
+      "WordCrackLib/1.0.0": {
+        "runtime": {
+          "WordCrackLib.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "WordCrack Terminal/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "WordCrackLib/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

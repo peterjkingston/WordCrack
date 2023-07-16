@@ -6,24 +6,24 @@ namespace WordCrack
 {
     class DefaultDictionaryProvider : IDictionaryProvider
     {
-        Dictionary<string, string> _Dict;
+        Dictionary<string, string> _dict;
 
         public void ParseFromFile(string filePath)
         {
             //TODO: Implement Dictionary loading...
-            _Dict = new Dictionary<string, string>();
+            _dict = new Dictionary<string, string>();
             StreamReader sr = new StreamReader(filePath);
             string word;
             while (!sr.EndOfStream)
             {
                 word = sr.ReadLine() ?? string.Empty;
-                _Dict.Add(word, word);
+                _dict.Add(word, word);
             }
         }
 
         public Dictionary<string, string> GetDictionary()
         {
-            return _Dict;
+            return _dict;
         }
     }
 }

@@ -26,14 +26,26 @@ namespace WordCrack
             return _dict.ContainsKey(word);
         }
 
-        public void CheckWord(string word)
+        public bool CheckWord(string word)
         {
             if (IsValidWord(word))
             {
                 WordEventArgs we = new WordEventArgs();
                 we.WordFound = word;
                 OnValidWordFound(we);
+                return true;
             }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool CheckWord(char[] letters)
+        {
+            var sb = new StringBuilder();
+            sb.Append(letters);
+            return CheckWord(sb.ToString());
         }
 
         protected virtual void OnValidWordFound(WordEventArgs we)
@@ -41,11 +53,6 @@ namespace WordCrack
             ValidWordFound?.Invoke(this, we);
         }
 
-        public void CheckWord(char[] letters)
-        {
-            var sb = new StringBuilder();
-            sb.Append(letters);
-            CheckWord(sb.ToString());
-        }
+        
     }
 }

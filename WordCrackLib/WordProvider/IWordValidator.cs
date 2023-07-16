@@ -2,8 +2,8 @@
 {
     public interface IWordValidator
     {
-        void CheckWord(string word);
-        void CheckWord(char[] letters);
+        bool CheckWord(string word);
+        bool CheckWord(char[] letters);
         bool IsValidWord(string word);
         event WordEventHandler ValidWordFound;
     }
